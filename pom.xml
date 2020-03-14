@@ -20,6 +20,7 @@
 		<springfox.version>2.9.2</springfox.version>
 		<cxf.version>3.1.8</cxf.version>
 		<log4j.version>2.12.1</log4j.version>
+		<activemq.version>5.15.8</activemq.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -322,7 +323,32 @@
 		<!-- <artifactId>activemq-all</artifactId> -->
 		<!-- <version>5.15.8</version> -->
 		<!-- </dependency> -->
+		<!-- activemq-all 自带spring与配置的spring版本冲突，故选择单独配置 -->
 		<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-broker</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>artemis-jms-client</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+
+
 		<dependency>
 			<groupId>jaxen</groupId>
 			<artifactId>jaxen</artifactId>
@@ -337,42 +363,42 @@
 			<version>2.1.1</version>
 		</dependency>
 
-		<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-transports-http</artifactId>
-		<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-frontend-jaxws</artifactId>
-		<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-		<version>${cxf.version}</version>
-		<exclusions>
-		<exclusion>
-		<groupId>javax.ws.rs</groupId>
-		<artifactId>javax.ws.rs-api</artifactId>
-		</exclusion>
-		</exclusions>
-		</dependency>
-		<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-rs-extension-providers</artifactId>
-		<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		<groupId>org.codehaus.woodstox</groupId>
-		<artifactId>stax2-api</artifactId>
-		<version>4.1</version>
-		</dependency>
-		<dependency>
-		<groupId>org.codehaus.woodstox</groupId>
-		<artifactId>woodstox-core-asl</artifactId>
-		<version>4.4.1</version>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.cxf</groupId> -->
+		<!-- <artifactId>cxf-rt-transports-http</artifactId> -->
+		<!-- <version>${cxf.version}</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.cxf</groupId> -->
+		<!-- <artifactId>cxf-rt-frontend-jaxws</artifactId> -->
+		<!-- <version>${cxf.version}</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.cxf</groupId> -->
+		<!-- <artifactId>cxf-rt-frontend-jaxrs</artifactId> -->
+		<!-- <version>${cxf.version}</version> -->
+		<!-- <exclusions> -->
+		<!-- <exclusion> -->
+		<!-- <groupId>javax.ws.rs</groupId> -->
+		<!-- <artifactId>javax.ws.rs-api</artifactId> -->
+		<!-- </exclusion> -->
+		<!-- </exclusions> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.cxf</groupId> -->
+		<!-- <artifactId>cxf-rt-rs-extension-providers</artifactId> -->
+		<!-- <version>${cxf.version}</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.codehaus.woodstox</groupId> -->
+		<!-- <artifactId>stax2-api</artifactId> -->
+		<!-- <version>4.1</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.codehaus.woodstox</groupId> -->
+		<!-- <artifactId>woodstox-core-asl</artifactId> -->
+		<!-- <version>4.4.1</version> -->
+		<!-- </dependency> -->
 
 
 		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
