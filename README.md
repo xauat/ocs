@@ -17,3 +17,7 @@ TestController 中的注解
 2 CXF
 java.lang.ClassNotFoundException: com/sun/tools/internal/xjc/api/XJC  缺少tools.jar
 jdk自带此包，jre不带， 想办法加入其中，或者在maven中自己加入
+
+3 待解决c3p0日志 由log4j2 接管
+
+4 log4j2 写文件在大并发量的情况下回锁死，解决方法百度
