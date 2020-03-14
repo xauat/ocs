@@ -15,7 +15,7 @@
 		<spring.version>5.1.14.RELEASE</spring.version>
 		<hibenate.version>5.3.6.Final</hibenate.version>
 		<swagger.version>2.9.2</swagger.version>
-		<shiro.version>1.4.1</shiro.version>
+		<shiro.version>1.5.1</shiro.version>
 		<jackson.version>2.9.6</jackson.version>
 		<springfox.version>2.9.2</springfox.version>
 		<cxf.version>3.3.4</cxf.version>
