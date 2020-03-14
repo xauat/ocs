@@ -8,20 +8,22 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
-	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xmlns:soap="http://cxf.apache.org/bindings/soap"
 	xmlns:core="http://cxf.apache.org/core"
-	xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
-		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
-		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
-		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/lang https://www.springframework.org/schema/lang/spring-lang-4.3.xsd
+	xmlns:addressing="http://cxf.apache.org/ws/addressing"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://schemas.xmlsoap.org/ws/2004/08/addressing http://schemas.xmlsoap.org/ws/2004/08/addressing
 		http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-4.3.xsd
-		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd
-		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+		http://cxf.apache.org/ws/addressing http://cxf.apache.org/schemas/ws/addressing.xsd
+		http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core
 		http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd
-		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util-4.3.xsd">
+		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util-4.3.xsd
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/lang https://www.springframework.org/schema/lang/spring-lang-4.3.xsd
+		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<!--启用spring的一些annotation -->
 	<context:annotation-config />
@@ -34,6 +36,10 @@
 
 	<context:property-placeholder location="classpath:db.properties" />
 	
+	
+	 <!--CXF 其中id是自己定义的，implementor是接口实现类，address就是访问的地址 -->
+     <!-- 相当于Endpoint.publish("http://localhost:8080/service", DemoCXFImp()); -->
+     <jaxws:endpoint id="deomCXF" implementor="com.aerors.ocs.cxf.DemoCXFImp" address="/ws"/>
 
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">

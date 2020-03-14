@@ -9,10 +9,13 @@ import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aerors.ocs.entity.ProcessInfo;
+import com.aerors.ocs.mq.QueueSender;
+import com.aerors.ocs.mq.TopicSender;
 import com.aerors.ocs.service.ProcessInfoService;
 
 import io.swagger.annotations.Api;
@@ -29,6 +32,9 @@ public class TestController {
 	
 	@Resource private ProcessInfoService processInfoService;
 	
+	@Resource private QueueSender queueSender;
+	@Resource private TopicSender topicSender;
+//	
 	@ApiOperation(httpMethod = "GET", value = "test", notes = "接口测试")
 	@ApiImplicitParams({
 		@ApiImplicitParam(paramType = "query",name="page",value = "页数",required = true,dataType = "int"),
@@ -55,6 +61,19 @@ public class TestController {
 		List<T> list =  processInfoService.queryByHql(sql);
 		System.out.println("1111");
 		return "This is a swagger-ui test";
+	}
+	
+	
+	
+	@ApiOperation(httpMethod = "Post", value = "activeMQTest", notes = "activeMQTest")
+	@PostMapping(value = "/activeMQTest")
+	@ResponseBody
+	public String activeMQTest() {
+		
+		queueSender.send("ocs.Queue", "activeMQ Queue test");
+//		
+		topicSender.send("ocs.Topic",  "activeMQ topic test");
+		return "This is a activeMQ test";
 	}
 
 }
