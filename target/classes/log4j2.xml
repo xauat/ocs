@@ -52,6 +52,7 @@
         <logger name="org.hibernate" level="ERROR"></logger>
         <logger name="springfox.documentation" level="ERROR"></logger>
         <logger name="org.jboss.logging" level="ERROR"></logger>
+        <logger name="com.mchange.v2.log.log4j2.Log4j2MLog" level="ERROR"></logger>
         <root level="all">
             <appender-ref ref="Console"/>
 <!--             <appender-ref ref="RollingFileInfo"/> -->
