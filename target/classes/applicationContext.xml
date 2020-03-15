@@ -12,7 +12,7 @@
 	xmlns:core="http://cxf.apache.org/core"
 	xmlns:addressing="http://cxf.apache.org/ws/addressing"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://schemas.xmlsoap.org/ws/2004/08/addressing http://schemas.xmlsoap.org/ws/2004/08/addressing
 		http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://cxf.apache.org/ws/addressing http://cxf.apache.org/schemas/ws/addressing.xsd

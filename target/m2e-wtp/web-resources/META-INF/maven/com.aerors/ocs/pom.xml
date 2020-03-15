@@ -19,7 +19,7 @@
 		<jackson.version>2.9.6</jackson.version>
 		<springfox.version>2.9.2</springfox.version>
 		<cxf.version>3.3.4</cxf.version>
-		<log4j.version>2.12.1</log4j.version>
+		<log4j.version>2.13.0</log4j.version>
 		<activemq.version>5.15.11</activemq.version>
 	</properties>
 	<dependencies>
@@ -203,6 +203,23 @@
 			<artifactId>log4j-jcl</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>1.7.25</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
 		<!-- hibernate -->
 
 		<dependency>
@@ -215,6 +232,14 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibenate.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.mchange/mchange-commons-java -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>mchange-commons-java</artifactId>
+			<version>0.2.15</version>
 		</dependency>
 
 		<dependency>
@@ -415,6 +440,14 @@
 			<artifactId>javassist</artifactId>
 			<version>3.24.1-GA</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 	</dependencies>
 	<build>

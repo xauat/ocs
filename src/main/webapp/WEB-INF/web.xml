@@ -59,7 +59,7 @@
 		<servlet-name>cxf</servlet-name>
 		<url-pattern>/service/*</url-pattern>
 	</servlet-mapping>
-
+	
 	<!-- log4j2 -->
 	<context-param>
 		<param-name>log4jConfiguration</param-name>
@@ -80,4 +80,6 @@
 		<dispatcher>INCLUDE</dispatcher>
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
+
+	
 </web-app>

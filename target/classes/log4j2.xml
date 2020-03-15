@@ -48,12 +48,16 @@
     <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
     <loggers>
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
-        <logger name="org.springframework" level="ERROR"></logger>
+        <logger name="org.springframework" level="info"></logger>
         <logger name="org.hibernate" level="ERROR"></logger>
         <logger name="springfox.documentation" level="ERROR"></logger>
         <logger name="org.jboss.logging" level="ERROR"></logger>
-        <logger name="com.mchange.v2.log.log4j2.Log4j2MLog" level="ERROR"></logger>
-        <root level="all">
+<!--          <logger name="log4j.logger.com.mchange" level="ERROR"></logger> -->
+        <logger name="com.mchange.v2" level="ERROR">
+        
+<!--         <appender-ref ref="Console"/>   -->
+        </logger>
+        <root level="info">
             <appender-ref ref="Console"/>
 <!--             <appender-ref ref="RollingFileInfo"/> -->
 <!--             <appender-ref ref="RollingFileWarn"/> -->
