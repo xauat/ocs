@@ -16,7 +16,7 @@
 		<hibenate.version>5.3.6.Final</hibenate.version>
 		<swagger.version>2.9.2</swagger.version>
 		<shiro.version>1.4.1</shiro.version>
-		<jackson.version>2.9.6</jackson.version>
+		<jackson.version>2.13.4.1</jackson.version>
 		<springfox.version>2.9.2</springfox.version>
 		<cxf.version>3.3.4</cxf.version>
 		<log4j.version>2.13.0</log4j.version>
