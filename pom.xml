@@ -18,7 +18,7 @@
 		<shiro.version>1.4.1</shiro.version>
 		<jackson.version>2.9.6</jackson.version>
 		<springfox.version>2.9.2</springfox.version>
-		<cxf.version>3.3.4</cxf.version>
+		<cxf.version>3.4.10</cxf.version>
 		<log4j.version>2.13.0</log4j.version>
 		<activemq.version>5.15.11</activemq.version>
 	</properties>
